@@ -213,6 +213,22 @@ module.exports = function(grunt) {
       }
     },
 
+    manifest: {
+      generate: {
+        options: {
+          basePath: "fixtures/manifest/"
+        },
+        src: [
+          "*.js",
+          "*.css",
+          "folder_one/*",
+          "folder_two/*.js",
+          "folder_two/*.css"
+        ],
+        dest: "manifest.appcache"
+      }
+    },
+
     mincss: {
       compress: {
         files: {
@@ -277,5 +293,5 @@ module.exports = function(grunt) {
   });
 
   grunt.loadTasks("../tasks");
-  grunt.registerTask("default", "clean test:clean coffee compress copy jade jst handlebars less mincss requirejs stylus yuidoc test:tasks");
+  grunt.registerTask("default", "clean test:clean coffee compress copy jade jst handlebars less manifest mincss requirejs stylus yuidoc test:tasks");
 };

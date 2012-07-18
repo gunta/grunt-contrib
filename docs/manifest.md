@@ -1,0 +1,74 @@
+## Generate HTML5 Cache Manifest files
+> Contributed By: [Gunther Brunner](/gunta85) (@gunta85)
+
+### Overview
+
+Inside your `grunt.js` file add a section named `manifest`. [Visit the Appcache Facts](http://appcachefacts.info/) for more information on Cache Manifest files. 
+
+#### Parameters
+
+##### options ```object```
+
+This controls how this task (and its helpers) operate and should contain key:value pairs, see options below.
+
+##### src (required)  ```string|array```
+
+Sets the input files.
+
+##### dest (optional) ```string```
+
+Sets the name of the Cache Manifest file.
+By default the standard ```manifest.appcache``` filename will be used.
+
+#### Options
+
+##### basePath (optional)  ```string```
+
+Sets the base path. Usually one would set this.
+
+##### exclude (optional)  ```string|array```
+
+Exclude specific files from the Cache Manifest file.
+
+##### network (optional)  ```string|array```
+
+Adds a string to the NETWORK section. 
+
+By default ```an online whitelist wildcard "*"``` flag is added. 
+
+See [here](http://diveintohtml5.info/offline.html#network) for more information.
+
+##### fallback (optional)  ```string|array```
+
+Adds a string to the FALLBACK section. 
+
+See [here](http://diveintohtml5.info/offline.html#fallback) for more information.
+
+##### preferOnline (optional)  ```boolean```
+
+Adds a string to the SETTINGS section, specifically the cache mode flag of the ```prefer-online``` state. 
+
+See [here](http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#concept-appcache-mode-prefer-online) for more information.
+
+
+#### Config Example
+
+``` javascript
+manifest: {
+  generate: {
+    options: {
+      basePath: "../",
+      network: ["http://*", "https://*"],
+      fallback: ["/ /offline.html"],
+      exclude: ["js/jquery.min.js"],
+      preferOnline: true
+    },
+    src: [
+    	"some_files/*.html",
+    	"js/*.min.js",
+    	"css/*.css"
+    ],
+    dest: "manifest.appcache"
+  }
+}
+```
