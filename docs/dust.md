@@ -28,13 +28,13 @@ Sets the template name as the full relative path. Default is **false**.
 If this is set to **true**, the way to render a template will be:
 
 ``` javascript
-dust.render("path/to/sourcefile.dust", {});
+dust.render("path/to/sourcefile.dust", ...);
 ```
 
 Instead of the default *(filename without the extension)*:
 
 ``` javascript
-dust.render("sourcefile", {}, function(){});
+dust.render("sourcefile", ...);
 ```
 
 

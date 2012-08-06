@@ -3,7 +3,8 @@
 
 ### Overview
 
-Inside your `grunt.js` file add a section named `manifest`. [Visit the Appcache Facts](http://appcachefacts.info/) for more information on Cache Manifest files. 
+Inside your `grunt.js` file add a section named `manifest`.
+Visit the [Appcache Facts](http://appcachefacts.info/) for more information on Cache Manifest files.
 
 #### Parameters
 
@@ -87,7 +88,8 @@ CACHE MANIFEST
 
 CACHE:
 css/style.css
-js/jquery.min.js
+js/zepto.min.js
+js/script.js
 some_files/index.html
 some_files/about.html
 
