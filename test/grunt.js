@@ -153,6 +153,17 @@ module.exports = function(grunt) {
       }
     },
 
+    dust: {
+      compile: {
+        options: {
+          fullname: false
+        },
+        files: {
+          "fixtures/output/dust.js": "fixtures/dust/one.dust"
+        }
+      }
+    },
+
     handlebars: {
       compile: {
         options: {
@@ -216,7 +227,8 @@ module.exports = function(grunt) {
     manifest: {
       generate: {
         options: {
-          basePath: "fixtures/manifest/"
+          basePath: "fixtures/manifest/",
+          timestamp: false
         },
         src: [
           "*.js",
@@ -293,5 +305,5 @@ module.exports = function(grunt) {
   });
 
   grunt.loadTasks("../tasks");
-  grunt.registerTask("default", "clean test:clean coffee compress copy jade jst handlebars less manifest mincss requirejs stylus yuidoc test:tasks");
+  grunt.registerTask("default", "clean test:clean coffee compress copy dust jade jst handlebars less manifest mincss requirejs stylus yuidoc test:tasks");
 };
