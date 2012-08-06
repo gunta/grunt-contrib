@@ -27,6 +27,9 @@ Compress files and folders using gzip or zip.
 #### [`copy`](/gruntjs/grunt-contrib/blob/master/docs/copy.md)
 Copy files into another directory.
 
+#### [`dust`](/gruntjs/grunt-contrib/blob/master/docs/dust.md)
+Compile dust templates to JST file.
+
 #### [`handlebars`](/gruntjs/grunt-contrib/blob/master/docs/handlebars.md)
 Compile handlebars templates to JST file.
 
@@ -41,6 +44,9 @@ Compile LESS files to CSS.
 
 #### [`mincss`](/gruntjs/grunt-contrib/blob/master/docs/mincss.md)
 Minify CSS files.
+
+#### [`manifest`](/gruntjs/grunt-contrib/blob/master/docs/manifest.md)
+Generates HTML5 Cache Manifest files.
 
 #### [`requirejs`](/gruntjs/grunt-contrib/blob/master/docs/requirejs.md)
 Optimize RequireJS projects using r.js.
