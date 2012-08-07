@@ -14,19 +14,20 @@ module.exports = function (grunt) {
 
     // If we have a basePath, specify it
     if (this.data.options.basePath) {
-      grunt.file.setBase(this.data.options.basePath);
+      var base = grunt.file.expandDirs(this.data.options.basePath);
+      grunt.file.setBase(base);
     }
 
     // TODO: ditch this when grunt v0.4 is released
     this.files = this.files || grunt.helper("normalizeMultiTaskFiles", this.data, this.target);
 
     var options = grunt.helper("options", this, {timestamp: true});
-    var verbose = true,
-      done = this.async(),
-      files = grunt.file.expandFiles(this.file.src),
-      destFile = this.file.dest,
-      contents = "CACHE MANIFEST\n",
-      excludeFiles = options.exclude;
+    var verbose = true;
+	var done = this.async();
+	var files = grunt.file.expandFiles(this.file.src);
+	var destFile = this.file.dest;
+	var contents = "CACHE MANIFEST\n";
+	var excludeFiles = options.exclude;
 
     grunt.verbose.writeflags(options, "Options");
 
