@@ -242,7 +242,7 @@ module.exports = function(grunt) {
           "folder_two/*.js",
           "folder_two/*.css"
         ],
-        dest: "manifest.appcache"
+        dest: "../output/manifest.appcache"
       }
     },
 
